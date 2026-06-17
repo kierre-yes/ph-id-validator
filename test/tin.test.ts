@@ -31,6 +31,17 @@ describe('validateTin', () => {
             expect(result.errorCode).toBe('INVALID_LENGTH');
         }
     })
+    it('rejects non-digit characters', () => {
+        const result = validateTin('123-ABC-789');
+        expect(result.valid).toBe(false);
+})
+    it('normalizes TIN without dashes', () => {
+        const result = validateTin('123456789');
+        expect(result.valid).toBe(true);
+    if (result.valid) {
+        expect(result.normalized).toBe('123456789');
+    }
+})
 })
 
 describe('formatTin', () => {

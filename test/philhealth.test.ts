@@ -24,6 +24,18 @@ describe('validatePhilhealthPin', () => {
       expect(result.errorCode).toBe('INVALID_LENGTH');
     }
   });
+  it('rejects non-digit characters', () => {
+  const result = validatePhilhealthPin('12-34567AB01-2');
+  expect(result.valid).toBe(false);
+});
+it('normalizes PIN without dashes', () => {
+  const result = validatePhilhealthPin('123456789012');
+  expect(result.valid).toBe(true);
+
+  if (result.valid) {
+    expect(result.normalized).toBe('123456789012');
+  }
+});
 });
 describe('formatPhilhealthPin', () => {
   it('formats a 12-digit PhilHealth PIN', () => {
