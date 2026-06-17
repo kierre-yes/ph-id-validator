@@ -14,7 +14,7 @@ export function validateTin(input: string): ValidationResult {
         return {
             valid: false,
             errorCode: 'INVALID_LENGTH',
-            message: 'TIN must contain be empty',
+            message: 'TIN cannot be empty',
         }
     }
     if (normalized.length !== TIN_BASE_LENGTH && normalized.length !== TIN_WITH_BRANCH_LENGTH) {
