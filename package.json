@@ -1,5 +1,5 @@
 {
-  "name": "ph-id-validator",
+  "name": "@kierfr_atdev/ph-id-validator",
   "version": "0.1.0",
   "description": "TypeScript-first validation and formatting utilities for PH government IDs.",
   "type": "module",
